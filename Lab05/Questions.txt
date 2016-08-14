@@ -1,0 +1,16 @@
+1. The .data directive gets global variable to use.
+   The .word directive declares the size of storage for the .data member.
+   The .text directive is where the code goes starting with main.
+
+2. To set a breakpoint, click on the execute tab, then go the line you want to set a breakpoint and click on the
+   box that sets the breakpoint.
+
+3. After stopping at a breakpoint, to step through the code, press the green play button with a 1 at the top of the gui to step through one line at a time.
+
+4. Look at the right side of the MARS gui and you can change the value of a register by finding the register you want to change, and change the value.
+
+5. 0x1001000, the 13th fibonacci number is 233.
+
+6. A syscall instruction is used for system services that reads the number in $v0.
+   The value 1 in $v0 is used to print the value in $a0.
+   The value 10 in $v0 will exit and terminate execution.

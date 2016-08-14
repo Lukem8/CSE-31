@@ -1,0 +1,14 @@
+1.	0x58800000
+	1.12589991E15 + 1.0 = 1.12589991E15
+
+2.	0x58800000
+	1.12589991E15 + 1.0 = 1.12589991E15
+
+3.	0xd8800000
+	0x58800000
+	1.0
+	If we add these floats in different orders, they will sum to different values.
+
+4.	No, associative property is (x+y) + z = x + (y+z),
+	our answer from #3 shows that floats do not hold this to be true.
+

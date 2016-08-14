@@ -1,0 +1,44 @@
+C1.	
+	
+Line 5. stack
+Line 6. stack
+Line 7. stack
+Line 8. stack 
+ 
+Line 10. stack
+Line 11. heap
+Line 12. stack
+Line 13.  heap
+Line 14. stack
+Line 15. heap
+Line 16. stack
+
+C2, C3.
+
+Line 5. allocated on the stack
+Line 6. allocated on the stack
+Line 7. allocated on the stack
+Line 8. allocated on the stack
+ 
+Line 10. no
+Line 11. allocated on the heap
+Line 12. no
+Line 13. no
+Line 14. no
+Line 15. allocated on the heap
+Line 16. freed from the stack
+
+C4.
+
+Line 5. no
+Line 6. no
+Line 7. no
+Line 8. no
+ 
+Line 10. no
+Line 11. no
+Line 12. no
+Line 13. no
+Line 14. yes
+Line 15. no
+Line 16. no

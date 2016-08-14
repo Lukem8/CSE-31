@@ -1,0 +1,5 @@
+1. 	It may seem to work if int *temp points a valid memory address that can hold an integer.
+	In MIPS if we declare the temp pointer in the .word, then this works because it has a valid address,
+	so storing a value to that address works, and dereferencing that value also works.
+
+2.	

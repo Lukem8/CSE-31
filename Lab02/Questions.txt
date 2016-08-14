@@ -1,0 +1,36 @@
+Q1.	The command 'gdb 'programName'' will load the program into gdb, 		
+	then the command 'run' will run the program in gdb.
+
+Q2. 	To pass command line arguments to a program using gdb type 'run [arglist]' where arglist are your arguments.
+
+Q3.	Use the command 'break' or 'b' to set a breakpoint in a program. You can set breakpoints at specific lines or function calls.
+
+Q4.	The command 'break ... if expr' will set a breakpoint when a set of conditions is true.
+
+Q5.	The command 'next' will execute the next line of C code after a break.
+
+Q6.	The command 'step' will step through the function line by line.
+
+Q7.	The command 'continue' or 'c' will continue running the program after a breakpoint.
+
+Q8.	The command 'print [/f] [expr]' will display the value of a variable or expression. f is the format of the variable (int, char, float, ect.)
+
+Q9.	The command 'display [/f] expr' will show the value of expr each time the program stops. f is the format of the variable (int, char, float, ect.)
+
+Q10.	The command display 'variable_name' will print out the value of your variable and add that variable to the display list. 
+	If you add all of your variable to the list, you can type the command 'display' which will show all of your variables.
+
+Q11.	The command 'quit' or 'q' will exit out of gdb.
+
+Q12.	The bug causing append to not work correctly is that there is no terminating null character at the end of the string.
+	If we add one in at the end of the string the issue is resolved.
+
+Q13.	Line 15 caused the segmentation fault;  scanf("%d",input); 
+
+Q14.	This line is expecting the address of input, &input. This will fix the segmentation fault.
+
+Q15.	The bug that still produces the wrong output is that the value of sum is not being changed. 
+	To fix this bug, we must pass the variable sum by reference (by pointer) to the function, so the value can be changed.	
+	Once in the function, we can us the dereference operator to change the value of sum.
+
+

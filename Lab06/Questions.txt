@@ -1,0 +1,73 @@
+1.	There are 3 bugs in the program. When we advance the pointer to the next location, we should not increment by 1,
+	but rather by 4 bytes, because the next value to be read is 4 bytes away in memory. The other bug is checking if the value is equal to 0 before incrementing count.
+
+2.	Fix the bugs by changing lines 14 & 15 to:
+	addiu   $a0, $a0, 4    
+        addiu   $a1, $a1, 4 
+	because we need to advance the pointer by 4.
+	The other bug is that the program was checking if the value was 0 after we had already stored the value in $a1, and incremented count.
+	To fix this bug, we do a check before we place the value in $a1, and if it is 0 we leave the loop. Then at the end of the loop, we jump
+	back to the top of the loop using: j loop.
+
+3.	My Strategy to find the bugs was to first assemble the program. I then saw that the addresses were misaligned.
+	I then just read through the code line by line to see if it was doing what it was intended to do.
+
+4.	The source pointer is initially stored in $9 or $t1.
+
+5.	The dest pointer is initially stored in $10 or $t2.
+
+6.	The instruction to load the addresses of source and dest is la "load address".
+
+7.	The loop to copy values begins at line 34, at the label $L6.
+
+8.	
+	
+$L6:	
+	Instruction: addu	$8,$8,1
+	Purpose:		Add one to register $8.
+	Corresponding C: 	x = x + 1;
+	
+	Instruction: sll	$3,$8,2
+	Purpose:		Mulitply the value in register $8 by 4, and put that value in $3.
+	Corresponding C:	y = x << 2;
+	
+	Instruction: addu	$5,$7,$9
+	Purpose:		Makes register $5 hold the address of $9 plus some offset that is in $7. $9 holds the base address of the source array. 
+	Corresponding C:	pt = source + z; //Pointer points to array A plus offset int z.
+
+	Instruction: addu	$2,$3,$9
+	Purpose:		Makes register $2 hold the address of the next value in the array after $2.
+	Corresponding C:	ptr = source + 4x;
+
+	Instruction: addu	$6,$7,$10
+	Purpose:		Make register $6 hold the base address of dest array.
+	Corresponding C:	pt2 = dest[0] + z;
+
+	Instruction: lw		$4,0($2)
+	Purpose:		Get the i+1 value of the source array.
+	Corresponding C:	y = source[z+1];
+
+	Instruction: move	$7,$3
+	Purpose:		Increment $7 by 4 bytes, for the next iteration. We are putting the value in $3 into register $7.
+	Corresponding C:	z += 4;
+
+	Instruction: lw		$3,0($5)
+	Purpose:		Get the starting value of the source array.
+	Corresponding C:	v = source[0];
+
+	Instruction: #nop	
+	Purpose:		Its a comment.
+	Corresponding C:	//Comment
+
+	Instruction: sw		$3,0($6)
+	Purpose:		Store the value in $3 into the address pointed to by $6.
+	Corresponding C:	dest[z] = source[z];
+
+	Instruction: bne	$4,$0,$L6
+	Purpose:		Check to see if the value in $4 == 0, if so jump to the label, and do the loop again.
+	Corresponding C:	if (y != 0)
+					continue; //(i.e. goto $L6)
+				else
+					break; //break the loop.
+
+Collaborators: Jose

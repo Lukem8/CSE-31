@@ -1,0 +1,22 @@
+Q1. The -c flag compiles the source file without linking.
+
+Q2. The -o flag links the object files of the program. It writes the build output to the output file.
+
+Q3. The command to load output0 into gdb is:
+	gdb ./output0
+
+Q4. break main
+
+Q5. run
+
+Q6. step
+
+Q7. Unsigned int is 32 bits (4 bytes)
+
+Q8. Long int is 64 bits (8 bytes)
+
+Q9. Yes, both signed and unsigned ints are 32 bits (4 bytes)
+
+Q10. The output is -2147483648 which is 1000 0000 0000 0000 (twos complement).
+     When you negate the most negative signed int you get 0111 1111 1111 1111 + 1,
+     which becomes 1000 0000 0000 0000 (twos complement so first bit tells us it's negative) which is why the output shows -2147483648.

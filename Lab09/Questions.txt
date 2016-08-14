@@ -1,0 +1,20 @@
+1.	In terms of characters being printed out what is the difference between -1 and 1?
+		-1 prints out two characters, '-', and '1', and 1 only prints out one character.
+
+2.	What general mathematical function can you think of to handle negative numbers in terms of positive numbers’ characters?
+		An absolute function can handle negative numbers in terms of positive numbers characters. The only other character that a negative number needs is '-'.
+
+3.	C equivalent code:
+
+	int mystery(int x)	
+	{
+		int a = 2;
+		a= a << (x-1);
+		a = a-1;
+		return a;
+
+	}
+
+4.	mystery(7) returns 127.
+
+5. 	mystery(32) produces -1, because of overflow.

@@ -1,0 +1,7 @@
+1.	The minimum number of states needed for this FSM is 4.
+
+	
+2.	The relation between the state and the output is that the output is either the number of the current state, or the number of the 
+	current state-1, unless we're in state 00. For the state 00 case, the output is always 00.
+
+
